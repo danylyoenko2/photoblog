@@ -1,0 +1,12 @@
+:root {
+  --fontFamily: "Playfair Display", serif;
+  --secondFamily: "Ubuntu", sans-serif;
+}
+
+body {
+  font-family: var(--fontFamily);
+}
+
+img + p {
+  font-family: var(--secondFamily);
+}
