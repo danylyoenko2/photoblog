@@ -1,12 +1,43 @@
 :root {
   --fontFamily: "Playfair Display", serif;
   --secondFamily: "Ubuntu", sans-serif;
+  --colorHover: #03a9f4;
+  --colorText: #626262;
+  --colorSignature: #b4ad9e;
+  --colorHeader: #7d7d7d;
 }
 
 body {
+  width: 1200px;
+  height: 2236px;
   font-family: var(--fontFamily);
+  font-size: 14px;
+  color: var(--colorText);
 }
 
-img + p {
+/* header */
+.menu-link {
+  text-decoration: none;
+  color: var(--colorHeader);
+}
+
+.menu-item {
+  list-style-type: none;
+}
+
+.menu-list a:hover {
+  color: var(--colorHover);
+  transition: 0.4ms ease-in-out;
+}
+
+/* header */
+/* main */
+.gallery-title {
+  font-weight: 300;
+}
+
+.gallery-category {
   font-family: var(--secondFamily);
 }
+
+/* main */
