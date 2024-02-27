@@ -3,7 +3,7 @@
   --secondFamily: "Ubuntu", sans-serif;
   --colorHover: #03a9f4;
   --colorText: #626262;
-  --colorSignature: #b4ad9e;
+  --colorCategory: #b4ad9e;
   --colorHeader: #7d7d7d;
 }
 
@@ -16,6 +16,20 @@ body {
 }
 
 /* header */
+
+.header {
+  height: 20px;
+  width: 560px;
+  justify-content: center;
+}
+
+.menu-list {
+  display: flex;
+  position: absolute;
+  gap: 70px;
+  right: 720px;
+}
+
 .menu-link {
   text-decoration: none;
   color: var(--colorHeader);
@@ -30,14 +44,20 @@ body {
   transition: 0.4ms ease-in-out;
 }
 
-/* header */
 /* main */
+
 .gallery-title {
+  font-size: 30px;
   font-weight: 300;
 }
 
 .gallery-category {
+  color: var(--colorCategory);
   font-family: var(--secondFamily);
 }
 
-/* main */
+.gallery-button {
+  width: 165px;
+  height: 60px;
+  color: var(--colorText);
+}
