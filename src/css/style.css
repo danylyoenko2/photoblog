@@ -29,9 +29,10 @@ body {
 
 .menu-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 120px;
+  max-width: 555px;
+  margin: 0 auto;
 }
 
 .menu-link {
@@ -54,13 +55,14 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  row-gap: 130px;
+  column-gap: 60px;
 }
 
 .gallery-card {
   width: 421px;
   max-height: 544px;
   margin-bottom: 120px;
-  margin-left: 47px;
 }
 
 .gallery-photo {
