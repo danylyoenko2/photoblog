@@ -57,12 +57,11 @@ body {
   align-items: center;
   row-gap: 125px;
   column-gap: 60px;
-  padding-bottom: 90px;
+  margin-bottom: 90px;
 }
 
 .gallery-card {
-  width: 421px;
-  max-height: 544px;
+  max-width: 421px;
 }
 
 .gallery-photo {
