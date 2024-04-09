@@ -20,6 +20,11 @@ body {
   margin: 0 auto;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 /* header */
 
 .header {
@@ -61,7 +66,7 @@ body {
 }
 
 .gallery-card {
-  max-width: 421px;
+  flex-basis: calc((100% - 65px) / 2);
 }
 
 .gallery-photo {
@@ -79,10 +84,13 @@ body {
   margin-bottom: 40px;
 }
 
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .gallery-button {
-  width: 165px;
-  height: 60px;
+  padding: 20px 50px;
   color: var(--colorText);
-  display: block;
-  margin: 0 auto;
+  align-self: center;
 }
