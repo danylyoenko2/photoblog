@@ -1,0 +1,15 @@
+.gallery-button {
+  padding: 20px 50px;
+  color: $color-text-primety;
+  align-self: center;
+  border: 1px solid $color-text-primety;
+  border-radius: 10px;
+  transition: border 0.4s ease;
+  transition: color 0.3s ease;
+}
+
+.gallery-button:hover {
+  border: 1px solid $color-text-hover;
+  color: $color-text-hover;
+  background-color: #03a8f42d;
+}

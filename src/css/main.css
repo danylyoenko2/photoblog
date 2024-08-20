@@ -1,0 +1,253 @@
+:root {
+  --fontFamily: "Playfair Display", serif;
+  --secondFamily: "Ubuntu", sans-serif;
+  --colorHover: #03a9f4;
+  --colorText: #626262;
+  --colorCategory: #b4ad9e;
+  --colorHeader: #7d7d7d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  outline: 0;
+  border: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: var(--fontFamily);
+  font-size: 14px;
+  color: var(--colorText);
+}
+
+.gallery-category {
+  color: var(--colorCategory);
+  font-family: var(--secondFamily);
+  margin-bottom: 32px;
+}
+
+.container {
+  max-width: 966px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 71px;
+  padding-bottom: 92px;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 555px;
+  margin: 0 auto;
+}
+
+.menu-link {
+  color: var(--colorHeader);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.menu-link:hover {
+  color: var(--colorHover);
+}
+
+.menu-link::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  display: block;
+  background-color: var(--colorHover);
+  border-radius: 10px;
+  bottom: -10px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.menu-link:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.gallery {
+  padding-bottom: 66px;
+}
+
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 125px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  margin-bottom: 90px;
+}
+
+.gallery-card {
+  flex-basis: calc((100% - 65px) / 2);
+  position: relative;
+}
+
+.photo::before {
+  content: "--------------------------------------------------------------";
+  color: #fff;
+  width: 435px;
+  height: 290px;
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(146deg, rgba(173, 173, 173, 0.4934348739) 0%, rgba(66, 66, 66, 0.3757878151) 0%, rgba(0, 0, 0, 0.462622549) 100%);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease;
+  transition: transform 0.5s ease-in;
+}
+
+.photo:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-photo {
+  margin-bottom: 32px;
+}
+
+.gallery-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-button {
+  padding: 20px 50px;
+  color: var(--colorText);
+  align-self: center;
+  border: 1px solid var(--colorText);
+  border-radius: 10px;
+  transition: border 0.4s ease;
+  transition: color 0.3s ease;
+}
+
+.gallery-button:hover {
+  border: 1px solid var(--colorHover);
+  color: var(--colorHover);
+  background-color: rgba(3, 168, 244, 0.1764705882);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  background-color: #fff;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  padding: 38px 32px 42px 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.modal:hover {
+  color: inherit;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.close-btn-icon {
+  position: absolute;
+  padding: 6px;
+  top: 8px;
+  right: 8px;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #251a1a;
+  margin-bottom: 30px;
+}
+
+.container-photo {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.container-photo::before {
+  content: "Golden Gate Bridge";
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--colorHeader);
+  width: 420px;
+  height: 280px;
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(146deg, rgba(173, 173, 173, 0.4934348739) 0%, rgba(66, 66, 66, 0.3757878151) 0%, rgba(0, 0, 0, 0.462622549) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.container-photo:hover::before {
+  opacity: 1;
+}
+
+.modal-text {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
