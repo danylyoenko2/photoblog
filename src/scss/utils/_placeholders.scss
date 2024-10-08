@@ -1,0 +1,12 @@
+%flex-center-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+%post {
+  position: relative;
+  height: 545px;
+  width: 420px;
+}

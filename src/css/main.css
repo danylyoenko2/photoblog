@@ -1,10 +1,7 @@
-:root {
-  --fontFamily: "Playfair Display", serif;
-  --secondFamily: "Ubuntu", sans-serif;
-  --colorHover: #03a9f4;
-  --colorText: #626262;
-  --colorCategory: #b4ad9e;
-  --colorHeader: #7d7d7d;
+.gallery__card {
+  position: relative;
+  height: 545px;
+  width: 420px;
 }
 
 * {
@@ -42,14 +39,14 @@ img {
 }
 
 body {
-  font-family: var(--fontFamily);
+  font-family: "Playfair Display", serif;
   font-size: 14px;
-  color: var(--colorText);
+  color: #626262;
 }
 
-.gallery-category {
-  color: var(--colorCategory);
-  font-family: var(--secondFamily);
+.gallery__category {
+  color: #b4ad9e;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 32px;
 }
 
@@ -65,7 +62,7 @@ body {
   padding-bottom: 92px;
 }
 
-.menu-list {
+.menu__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,23 +70,21 @@ body {
   margin: 0 auto;
 }
 
-.menu-link {
-  color: var(--colorHeader);
+.menu__link {
+  color: #7d7d7d;
   transition: color 0.3s ease;
   position: relative;
 }
-
-.menu-link:hover {
-  color: var(--colorHover);
+.menu__link:hover {
+  color: #03a9f4;
 }
-
-.menu-link::after {
+.menu__link::after {
   content: "";
   width: 100%;
   height: 3px;
   position: absolute;
   display: block;
-  background-color: var(--colorHover);
+  background-color: #03a9f4;
   border-radius: 10px;
   bottom: -10px;
   opacity: 0;
@@ -97,8 +92,7 @@ body {
   transition: opacity 0.3s ease;
   transition: transform 0.3s ease;
 }
-
-.menu-link:hover::after {
+.menu__link:hover::after {
   transform: scale(1);
   opacity: 1;
 }
@@ -107,20 +101,23 @@ body {
   padding-bottom: 66px;
 }
 
-.gallery-cards {
+.gallery__container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  row-gap: 125px;
-  -moz-column-gap: 60px;
-       column-gap: 60px;
-  margin-bottom: 90px;
+  flex-direction: column;
 }
 
-.gallery-card {
-  flex-basis: calc((100% - 65px) / 2);
-  position: relative;
+.gallery__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 135px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+}
+
+.gallery__card {
+  flex-basis: calc((100% - 60px) / 2);
 }
 
 .photo::before {
@@ -136,118 +133,38 @@ body {
   transition: opacity 0.3s ease;
   transition: transform 0.5s ease-in;
 }
-
 .photo:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-.gallery-photo {
+.photo__img {
   margin-bottom: 32px;
+  max-width: 420px;
+  max-height: 280px;
 }
 
-.gallery-title {
+.gallery__title {
   font-size: 30px;
   margin-bottom: 40px;
 }
 
-.gallery-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.gallery-button {
+.button {
   padding: 20px 50px;
-  color: var(--colorText);
+  color: #614040;
   align-self: center;
-  border: 1px solid var(--colorText);
+  border: 1px solid #614040;
   border-radius: 10px;
+  background-color: #fff;
   transition: border 0.4s ease;
   transition: color 0.3s ease;
 }
-
-.gallery-button:hover {
-  border: 1px solid var(--colorHover);
-  color: var(--colorHover);
+.button:hover {
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
   background-color: rgba(3, 168, 244, 0.1764705882);
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
-  background-color: #fff;
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 50%;
-  top: 50%;
-  padding: 38px 32px 42px 48px;
-  transform: translate(-50%, -50%);
-  border-radius: 4px;
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-
-.modal:hover {
-  color: inherit;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-.close-btn-icon {
-  position: absolute;
-  padding: 6px;
-  top: 8px;
-  right: 8px;
-}
-
-.modal-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 30px;
-  color: #251a1a;
-  margin-bottom: 30px;
-}
-
-.container-photo {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.container-photo::before {
-  content: "Golden Gate Bridge";
-  text-align: center;
-  font-weight: 600;
-  font-size: 24px;
-  color: var(--colorHeader);
-  width: 420px;
-  height: 280px;
-  display: block;
-  position: absolute;
-  background-image: linear-gradient(146deg, rgba(173, 173, 173, 0.4934348739) 0%, rgba(66, 66, 66, 0.3757878151) 0%, rgba(0, 0, 0, 0.462622549) 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.container-photo:hover::before {
-  opacity: 1;
-}
-
-.modal-text {
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
+.hide {
+  display: none;
 }
